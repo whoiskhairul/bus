@@ -1,0 +1,1 @@
+web: gunicorn bus_route.wsgi --log-file -
