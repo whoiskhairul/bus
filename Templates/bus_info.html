@@ -1,735 +1,689 @@
-{% block content %}
-<!doctype html>
-<HTML>
-<HEAD>
-<body bgcolor="#8ce887">
-  <title> Dhaka Bus Route  </title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% extends 'nav.html' %}
 
-</HEAD>
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href=""> <font color="green"  >Dhaka  <font color="red"  > Bus </font> Route</font></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<hr>
-
+{% load static %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
 
 <BODY>
-<FORM name="myform" action="" method="post">
-{% csrf_token %}
-<BR>
-<TABLE ALIGN="center" BORDER=0 CELLSPACING=0 CELLPADDING=0 >
- <TR ALIGN="left" VALIGN="middle">
+{% block content %}
+  <FORM name="myform" action="" method="post">
+  {% csrf_token %}
+  <BR>
+  <BR>
+  <table width="420" border="0" cellspacing="0" cellpadding="1" bgcolor="#7ac476" align="center">
+ 
+  <td>
+  <table width="100%" border="0" cellspacing="0" cellpadding="9" bgcolor="#7ac476">
+      <tr>
+      <td colspan="4" bgcolor="#7ac476" align="center">
+        <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
+          <b>                <h2>Dhaka City Bus Route</h2>    </b>      </font>
+      </td>
+      </tr>
 
-</TABLE>
-<BR>
-<table width="400" border="0" cellspacing="0" cellpadding="1" bgcolor="#7ac476" align="center">
-<tr>
-<td>
-<table width="100%" border="0" cellspacing="0" cellpadding="9" bgcolor="#7ac476">
-    <tr>
-    <td colspan="4" bgcolor="#7ac476" align="center">
-      <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-        <b>                <h2>Dhaka City Bus Route</h2>    </b>      </font>
-    </td>
-    </tr>
+      <Tr>
+        <Td bgcolor="#ffffff" align="left">
+          <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
+          <B>From</B></font>
+        </Td>
+        <Td bgcolor="#ffffff" align="right">
+    <select name="source" style="background-color: rgb(233, 245, 233);color: black;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;">
 
+          <option value="Abdullahpur">Abdullahpur</option>
+
+          <option value="Adabor">Adabor</option>
+
+          <option value="Adamjee College">Adamjee College</option>
+
+          <option value="Agargaon">Agargaon</option>
+
+          <option value="Airport">Airport</option>
+
+          <option value="Aminbazar">Aminbazar</option>
+
+          <option value="Ansar Camp">Ansar Camp</option>
+
+          <option value="Arambagh">Arambagh</option>
+
+          <option value="Asad Gate">Asad Gate</option>
+
+          <option value="Ashulia Bazar">Ashulia Bazar</option>
+
+          <option value="Azampur">Azampur</option>
+
+          <option value="Azimpur">Azimpur</option>
+
+          <option value="Babu Bazar">Babu Bazar</option>
+
+          <option value="Badda">Badda</option>
+
+          <option value="Baipayl">Baipayl</option>
+
+          <option value="Balughat">Balughat</option>
+
+          <option value="Kakoli">Kakoli</option>
+
+          <option value="Banani">Banani</option>
+
+          <option value="Banasree">Banasree</option>
+
+          <option value="Bangla College">Bangla College</option>
+
+          <option value="Bangla Motor">Bangla motor</option>
+
+          <option value="Basabo">Basabo</option>
+
+          <option value="Bashtola">Bashtola</option>
+
+          <option value="Bashundhara">Bashundhara</option>
+
+          <option value="Bijoy Sarani">Bijoy Sarani</option>
+
+          <option value="Bosila">Bosila</option>
+
+          <option value="CMH">CMH</option>
+
+          <option value="Chairman Bari">Chairman Bari</option>
+
+          <option value="Chashara">Chashara</option>
+
+          <option value="Chiriakhana">Chiriakhana</option>
+
+          <option value="City College">City College</option>
+
+          <option value="College Gate">College Gate</option>
+
+          <option value="Darussalam">Darussalam</option>
+
+          <option value="Daynik Bangla Mor">Daynik Bangla Mor</option>
+
+          <option value="Demra">Demra</option>
+
+          <option value="Dhanmondi 27">Dhanmondi 27</option>
+
+          <option value="Dhanmondi 32">Dhanmondi 32</option>
+
+          <option value="Dhour">Dhour</option>
+
+          <option value="Diabari">Diabari</option>
+
+          <option value="Duaripara">Duaripara</option>
+
+          <option value="ECB Chottor">ECB Chottor</option>
+
+          <option value="Fantasy Kingdom">Fantasy Kingdom</option>
+
+          <option value="Farmgate">Farmgate</option>
+
+          <option value="Fulbaria">Fulbaria</option>
+
+          <option value="GPO">GPO</option>
+
+          <option value="Gabtoli">Gabtoli</option>
+
+          <option value="Garrison">Garrison</option>
+
+          <option value="Gazipur Chowrasta">Gazipur Chowrasta</option>
+
+          <option value="Golap Shah Mazar">Golap Shah Mazar</option>
+
+          <option value="Gulistan">Gulistan</option>
+
+          <option value="Gulshan 1">Gulshan 1</option>
+
+          <option value="Gulshan 2">Gulshan 2</option>
+
+          <option value="Gulshan Bridge">Gulshan Bridge</option>
+
+          <option value="Hemayetpur">Hemayetpur</option>
+
+          <option value="High Court">High Court</option>
+
+          <option value="House Building">House Building</option>
+
+          <option value="Ittefaq">Ittefaq Office</option>
+
+          <option value="Jahangir Gate">Jahangir Gate</option>
+
+          <option value="Ittefaq">Jalkuri Jalkuri</option>
+
+          <option value="Jamgora">Jamgora</option>
+
+          <option value="Jamuna Future Park">Jamuna Future Park</option>
+
+          <option value="Japan Garden City">Japan Garden City</option>
+
+          <option value="Jasimuddin">Jasimuddin</option>
+
+          <option value="Jatrabari">Jatrabari</option>
+
+          <option value="Jonopath Mor">Jonopath Mor</option>
+
+          <option value="Kakoli">Kakoli</option>
+
+          <option value="Kakrail">Kakrail</option>
+
+          <option value="Kalabagan">Kalabagan</option>
+
+          <option value="Kallyanpur">Kallyanpur</option>
+
+          <option value="Kalshi">Kalshi</option>
+
+          <option value="Kamalapur">Kamalapur</option>
+
+          <option value="Kamarpara">Kamarpara</option>
+
+          <option value="Kataban">Kataban</option>
+
+          <option value="Kawran Bazar">Kawran Bazar</option>
+
+          <option value="Kazipara">Kazipara</option>
+
+          <option value="Keraniganj">Keraniganj</option>
+
+          <option value="Khamarbari">Khamarbari</option>
+
+          <option value="Khilgaon">Khilgaon</option>
+
+          <option value="Khilkhet">Khilkhet</option>
+
+          <option value="Kodomtoli">Kodomtoli</option>
+
+          <option value="Kuril Bishwa Road">Kuril Bishwa Road</option>
+
+          <option value="Link Road">Link Road</option>
+
+          <option value="MES">MES</option>
+
+          <option value="Madhya Badda">Madhya Badda</option>
+
+          <option value="Malibagh Mor">Malibagh Mor</option>
+
+          <option value="Malibagh Railgate">Malibagh Railgate</option>
+
+          <option value="Manik Nagar">Manik Nagar</option>
+
+          <option value="Motsho Bhaban">Motsho Bhaban</option>
+
+          <option value="Matuail">Matuail</option>
+
+          <option value="Matuail">Merul</option>
+
+          <option value="Merul">Merul</option>
+
+          <option value="Mirpur 1">Mirpur 1</option>
+
+          <option value="Mirpur 10">Mirpur 10</option>
+
+          <option value="Mirpur 11">Mirpur 11</option>
+
+          <option value="Mirpur 12">Mirpur 12</option>
+
+          <option value="Mirpur 14">Mirpur 14</option>
+
+          <option value="Mirpur 2">Mirpur 2</option>
+
+          <option value="Mirpur DOHS">Mirpur DOHS</option>
+
+          <option value="Moghbazar">Moghbazar</option>
+
+          <option value="Mohakhali">Mohakhali</option>
+
+          <option value="Mohammadpur">Mohammadpur</option>
+
+          <option value="Motijheel">Motijheel</option>
+
+          <option value="Motsho Bhaban">Motsho Bhaban</option>
+
+          <option value="Mouchak">Mouchak</option>
+
+          <option value="Mugdapara">Mugdapara</option>
+
+          <option value="Nabisco">Nabisco</option>
+
+          <option value="Nadda">Nadda</option>
+
+          <option value="Nandan Park">Nandan Park</option>
+
+          <option value="Natun Bazar">Natun Bazar</option>
+
+          <option value="Naya Bazar">Naya Bazar</option>
+
+          <option value="New Market">New Market</option>
+
+          <option value="Nilkhet">Nilkhet</option>
+
+          <option value="Pallabi">Pallabi</option>
+
+          <option value="Paltan">Paltan</option>
+
+          <option value="Police Plaza">Police Plaza</option>
+
+          <option value="Press Club">Press Club</option>
+
+          <option value="Proshika Mor">Proshika Mor</option>
+
+          <option value="Purobi">Purobi</option>
+
+          <option value="Rajarbagh">Rajarbagh</option>
+
+          <option value="Rajlakshmi">Rajlakshmi</option>
+
+          <option value="Rampura">Rampura</option>
+
+          <option value="Rampura Bridge">Rampura Bridge</option>
+
+          <option value="Ray Shaheb Bazar">Ray Shaheb Bazar</option>
+
+          <option value="Rampura">Rampura</option>
+
+          <option value="Rampura Bridge">Rampura Bridge</option>
+
+          <option value="Rayerbag">Rayerbag</option>
+
+          <option value="Rupnagar">Rupnagar</option>
+
+          <option value="Sadarghat">Sadarghat</option>
+
+          <option value="Satrasta">Satrasta</option>
+
+          <option value="Savar">Savar</option>
+
+          <option value="Sayedabad">Sayedabad</option>
+
+          <option value="Science Lab">Science Lab</option>
+
+          <option value="Shahbagh">Shahbagh</option>
+
+          <option value="Shahzadpur">Shahzadpur</option>
+
+          <option value="Shantinagar">Shantinagar</option>
+
+          <option value="Sheora">Sheora</option>
+
+          <option value="Shewrapara">Shewrapara</option>
+
+          <option value="Shia Masjid">Shia Masjid</option>
+
+          <option value="Shishu Mela">Shishu Mela</option>
+
+          <option value="Shonir Akhra">Shonir Akhra</option>
+
+          <option value="Shyamoli">Shyamoli</option>
+
+          <option value="Signal">Signal</option>
+
+          <option value="Sony Hall">Sony Cinema Hall</option>
+
+          <option value="Staff Quarter">Staff Quarter</option>
+
+          <option value="Staff Road">Staff Road</option>
+
+          <option value="Station Road">Station Road</option>
+
+          <option value="TT Para">TT Para</option>
+
+          <option value="Taltola">Taltola</option>
+
+          <option value="Technical">Technical</option>
+
+          <option value="Tongi">Tongi</option>
+
+          <option value="Uttar Badda">Uttar Badda</option>
+
+          <option value="Wireless Mor">Wireless Mor</option>
+
+          <option value="Workshop">Workshop</option>
+
+          <option value="Zirabo">Zirabo</option>
+
+          <option value="Ziya Uddan">Ziya Uddan</option>
+
+    </select>
+        </Td>
+          </Tr>
     <Tr>
       <Td bgcolor="#ffffff" align="left">
         <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-        <B>From</B></font>
+          <B>To</B></font>
       </Td>
       <Td bgcolor="#ffffff" align="right">
-   <select name="source" onChange="populate()" style="background-color: rgb(233, 245, 233);color: black;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;">
+  <select name="destination" style="background-color: rgb(233, 245, 233);color: black;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;">
 
-        <option value="Abdullahpur">Abdullahpur</option>
+    <option value="Abdullahpur">Abdullahpur</option>
 
-        <option value="Adabor">Adabor</option>
+    <option value="Adabor">Adabor</option>
 
-        <option value="Adamjee College">Adamjee College</option>
+    <option value="Adamjee College">Adamjee College</option>
 
-        <option value="Agargaon">Agargaon</option>
+    <option value="Agargaon">Agargaon</option>
 
-        <option value="Airport">Airport</option>
+    <option value="Airport">Airport</option>
 
-        <option value="Aminbazar">Aminbazar</option>
+    <option value="Aminbazar">Aminbazar</option>
 
-        <option value="Ansar Camp">Ansar Camp</option>
+    <option value="Ansar Camp">Ansar Camp</option>
 
-        <option value="Arambagh">Arambagh</option>
+    <option value="Arambagh">Arambagh</option>
 
-        <option value="Asad Gate">Asad Gate</option>
+    <option value="Asad Gate">Asad Gate</option>
 
-        <option value="Ashulia Bazar">Ashulia Bazar</option>
+    <option value="Ashulia Bazar">Ashulia Bazar</option>
 
-        <option value="Azampur">Azampur</option>
+    <option value="Azampur">Azampur</option>
 
-        <option value="Azimpur">Azimpur</option>
+    <option value="Azimpur">Azimpur</option>
 
-        <option value="Babu Bazar">Babu Bazar</option>
+    <option value="Babu Bazar">Babu Bazar</option>
 
-        <option value="Badda">Badda</option>
+    <option value="Badda">Badda</option>
 
-        <option value="Baipayl">Baipayl</option>
+    <option value="Baipayl">Baipayl</option>
 
-        <option value="Balughat">Balughat</option>
+    <option value="Balughat">Balughat</option>
 
-        <option value="Kakoli">Banani (Kakoli)</option>
+    <option value="Kakoli">Banani (Kakoli)</option>
 
-        <option value="Banani">Banani</option>
+    <option value="Banani">Banani</option>
 
-        <option value="Banasree">Banasree</option>
+    <option value="Banasree">Banasree</option>
 
-        <option value="Bangla College">Bangla College</option>
+    <option value="Bangla College">Bangla College</option>
 
-        <option value="Bangla Motor">Bangla motor</option>
+    <option value="Bangla Motor">Bangla motor</option>
 
-        <option value="Basabo">Basabo</option>
+    <option value="Basabo">Basabo</option>
 
-        <option value="Bashtola">Bashtola</option>
+    <option value="Bashtola">Bashtola</option>
 
-        <option value="Bashundhara">Bashundhara</option>
+    <option value="Bashundhara">Bashundhara</option>
 
-        <option value="Bijoy Sarani">Bijoy Sarani</option>
+    <option value="Bijoy Sarani">Bijoy Sarani</option>
 
-        <option value="Bosila">Bosila</option>
+    <option value="Bosila">Bosila</option>
 
-        <option value="CMH">CMH</option>
+    <option value="CMH">CMH</option>
 
-        <option value="Chairman Bari">Chairman Bari</option>
+    <option value="Chairman Bari">Chairman Bari</option>
 
-        <option value="Chashara">Chashara</option>
+    <option value="Chashara">Chashara</option>
 
-        <option value="Chiriakhana">Chiriakhana</option>
+    <option value="Chiriakhana">Chiriakhana</option>
 
-        <option value="City College">City College</option>
+    <option value="City College">City College</option>
 
-        <option value="College Gate">College Gate</option>
+    <option value="College Gate">College Gate</option>
 
-        <option value="Darussalam">Darussalam</option>
+    <option value="Darussalam">Darussalam</option>
 
-        <option value="Daynik Bangla Mor">Daynik Bangla Mor</option>
+    <option value="Daynik Bangla Mor">Daynik Bangla Mor</option>
 
-        <option value="Demra">Demra</option>
+    <option value="Demra">Demra</option>
 
-        <option value="Dhanmondi 27">Dhanmondi 27</option>
+    <option value="Dhanmondi 27">Dhanmondi 27</option>
 
-        <option value="Dhanmondi 32">Dhanmondi 32</option>
+    <option value="Dhanmondi 32">Dhanmondi 32</option>
 
-        <option value="Dhour">Dhour</option>
+    <option value="Dhour">Dhour</option>
 
-        <option value="Diabari">Diabari</option>
+    <option value="Diabari">Diabari</option>
 
-        <option value="Duaripara">Duaripara</option>
+    <option value="Duaripara">Duaripara</option>
 
-        <option value="ECB Chottor">ECB Chottor</option>
+    <option value="ECB Chottor">ECB Chottor</option>
 
-        <option value="Fantasy Kingdom">Fantasy Kingdom</option>
+    <option value="Fantasy Kingdom">Fantasy Kingdom</option>
 
-        <option value="Farmgate">Farmgate</option>
+    <option value="Farmgate">Farmgate</option>
 
-        <option value="Fulbaria">Fulbaria</option>
+    <option value="Fulbaria">Fulbaria</option>
 
-        <option value="GPO">GPO</option>
+    <option value="GPO">GPO</option>
 
-        <option value="Gabtoli">Gabtoli</option>
+    <option value="Gabtoli">Gabtoli</option>
 
-        <option value="Garrison">Garrison</option>
+    <option value="Garrison">Garrison</option>
 
-        <option value="Gazipur Chowrasta">Gazipur Chowrasta</option>
+    <option value="Gazipur Chowrasta">Gazipur Chowrasta</option>
 
-        <option value="Golap Shah Mazar">Golap Shah Mazar</option>
+    <option value="Golap Shah Mazar">Golap Shah Mazar</option>
 
-        <option value="Gulistan">Gulistan</option>
+    <option value="Gulistan">Gulistan</option>
 
-        <option value="Gulshan 1">Gulshan 1</option>
+    <option value="Gulshan 1">Gulshan 1</option>
 
-        <option value="Gulshan 2">Gulshan 2</option>
+    <option value="Gulshan 2">Gulshan 2</option>
 
-        <option value="Gulshan Bridge">Gulshan Bridge</option>
+    <option value="Gulshan Bridge">Gulshan Bridge</option>
 
-        <option value="Hemayetpur">Hemayetpur</option>
+    <option value="Hemayetpur">Hemayetpur</option>
 
-        <option value="High Court">High Court</option>
+    <option value="High Court">High Court</option>
 
-        <option value="House Building">House Building</option>
+    <option value="House Building">House Building</option>
 
-        <option value="Ittefaq">Ittefaq Office</option>
+    <option value="Ittefaq">Ittefaq Office</option>
 
-        <option value="Jahangir Gate">Jahangir Gate</option>
+    <option value="Jahangir Gate">Jahangir Gate</option>
 
-        <option value="Ittefaq">Jalkuri Jalkuri</option>
+    <option value="Ittefaq">Jalkuri Jalkuri</option>
 
-        <option value="Jamgora">Jamgora</option>
+    <option value="Jamgora">Jamgora</option>
 
-        <option value="Jamuna Future Park">Jamuna Future Park</option>
+    <option value="Jamuna Future Park">Jamuna Future Park</option>
 
-        <option value="Japan Garden City">Japan Garden City</option>
+    <option value="Japan Garden City">Japan Garden City</option>
 
-        <option value="Jasimuddin">Jasimuddin</option>
+    <option value="Jasimuddin">Jasimuddin</option>
 
-        <option value="Jatrabari">Jatrabari</option>
+    <option value="Jatrabari">Jatrabari</option>
 
-        <option value="Jonopath Mor">Jonopath Mor</option>
+    <option value="Jonopath Mor">Jonopath Mor</option>
 
-        <option value="Kakoli">Kakoli</option>
+    <option value="Kakoli">Kakoli</option>
 
-        <option value="Kakrail">Kakrail</option>
+    <option value="Kakrail">Kakrail</option>
 
-        <option value="Kalabagan">Kalabagan</option>
+    <option value="Kalabagan">Kalabagan</option>
 
-        <option value="Kallyanpur">Kallyanpur</option>
+    <option value="Kallyanpur">Kallyanpur</option>
 
-        <option value="Kalshi">Kalshi</option>
+    <option value="Kalshi">Kalshi</option>
 
-        <option value="Kamalapur">Kamalapur</option>
+    <option value="Kamalapur">Kamalapur</option>
 
-        <option value="Kamarpara">Kamarpara</option>
+    <option value="Kamarpara">Kamarpara</option>
 
-        <option value="Kataban">Kataban</option>
+    <option value="Kataban">Kataban</option>
 
-        <option value="Kawran Bazar">Kawran Bazar</option>
+    <option value="Kawran Bazar">Kawran Bazar</option>
 
-        <option value="Kazipara">Kazipara</option>
+    <option value="Kazipara">Kazipara</option>
 
-        <option value="Keraniganj">Keraniganj</option>
+    <option value="Keraniganj">Keraniganj</option>
 
-        <option value="Khamarbari">Khamarbari</option>
+    <option value="Khamarbari">Khamarbari</option>
 
-        <option value="Khilgaon">Khilgaon</option>
+    <option value="Khilgaon">Khilgaon</option>
 
-        <option value="Khilkhet">Khilkhet</option>
+    <option value="Khilkhet">Khilkhet</option>
 
-        <option value="Kodomtoli">Kodomtoli</option>
+    <option value="Kodomtoli">Kodomtoli</option>
 
-        <option value="Kuril Bishwa Road">Kuril Bishwa Road</option>
+    <option value="Kuril Bishwa Road">Kuril Bishwa Road</option>
 
-        <option value="Link Road">Link Road</option>
+    <option value="Link Road">Link Road</option>
 
-        <option value="MES">MES</option>
+    <option value="MES">MES</option>
 
-        <option value="Madhya Badda">Madhya Badda</option>
+    <option value="Madhya Badda">Madhya Badda</option>
 
-        <option value="Malibagh Mor">Malibagh Mor</option>
+    <option value="Malibagh Mor">Malibagh Mor</option>
 
-        <option value="Malibagh Railgate">Malibagh Railgate</option>
+    <option value="Malibagh Railgate">Malibagh Railgate</option>
 
-        <option value="Manik Nagar">Manik Nagar</option>
+    <option value="Manik Nagar">Manik Nagar</option>
 
-        <option value="Motsho Bhaban">Motsho Bhaban</option>
+    <option value="Motsho Bhaban">Motsho Bhaban</option>
 
-        <option value="Matuail">Matuail</option>
+    <option value="Matuail">Matuail</option>
 
-        <option value="Matuail">Merul</option>
+    <option value="Matuail">Merul</option>
 
-        <option value="Merul">Merul</option>
+    <option value="Merul">Merul</option>
 
-        <option value="Mirpur 1">Mirpur 1</option>
+    <option value="Mirpur 1">Mirpur 1</option>
 
-        <option value="Mirpur 10">Mirpur 10</option>
+    <option value="Mirpur 10">Mirpur 10</option>
 
-        <option value="Mirpur 11">Mirpur 11</option>
+    <option value="Mirpur 11">Mirpur 11</option>
 
-        <option value="Mirpur 12">Mirpur 12</option>
+    <option value="Mirpur 12">Mirpur 12</option>
 
-        <option value="Mirpur 14">Mirpur 14</option>
+    <option value="Mirpur 14">Mirpur 14</option>
 
-        <option value="Mirpur 2">Mirpur 2</option>
+    <option value="Mirpur 2">Mirpur 2</option>
 
-        <option value="Mirpur DOHS">Mirpur DOHS</option>
+    <option value="Mirpur DOHS">Mirpur DOHS</option>
 
-        <option value="Moghbazar">Moghbazar</option>
+    <option value="Moghbazar">Moghbazar</option>
 
-        <option value="Mohakhali">Mohakhali</option>
+    <option value="Mohakhali">Mohakhali</option>
 
-        <option value="Mohammadpur">Mohammadpur</option>
+    <option value="Mohammadpur">Mohammadpur</option>
 
-        <option value="Motijheel">Motijheel</option>
+    <option value="Motijheel">Motijheel</option>
 
-        <option value="Motsho Bhaban">Motsho Bhaban</option>
+    <option value="Motsho Bhaban">Motsho Bhaban</option>
 
-        <option value="Mouchak">Mouchak</option>
+    <option value="Mouchak">Mouchak</option>
 
-        <option value="Mugdapara">Mugdapara</option>
+    <option value="Mugdapara">Mugdapara</option>
 
-        <option value="Nabisco">Nabisco</option>
+    <option value="Nabisco">Nabisco</option>
 
-        <option value="Nadda">Nadda</option>
+    <option value="Nadda">Nadda</option>
 
-        <option value="Nandan Park">Nandan Park</option>
+    <option value="Nandan Park">Nandan Park</option>
 
-        <option value="Natun Bazar">Natun Bazar</option>
+    <option value="Natun Bazar">Natun Bazar</option>
 
-        <option value="Naya Bazar">Naya Bazar</option>
+    <option value="Naya Bazar">Naya Bazar</option>
 
-        <option value="New Market">New Market</option>
+    <option value="New Market">New Market</option>
 
-        <option value="Nilkhet">Nilkhet</option>
+    <option value="Nilkhet">Nilkhet</option>
 
-        <option value="Pallabi">Pallabi</option>
+    <option value="Pallabi">Pallabi</option>
 
-        <option value="Paltan">Paltan</option>
+    <option value="Paltan">Paltan</option>
 
-        <option value="Police Plaza">Police Plaza</option>
+    <option value="Police Plaza">Police Plaza</option>
 
-        <option value="Press Club">Press Club</option>
+    <option value="Press Club">Press Club</option>
 
-        <option value="Proshika Mor">Proshika Mor</option>
+    <option value="Proshika Mor">Proshika Mor</option>
 
-        <option value="Purobi">Purobi</option>
+    <option value="Purobi">Purobi</option>
 
-        <option value="Rajarbagh">Rajarbagh</option>
+    <option value="Rajarbagh">Rajarbagh</option>
 
-        <option value="Rajlakshmi">Rajlakshmi</option>
+    <option value="Rajlakshmi">Rajlakshmi</option>
 
-        <option value="Rampura">Rampura</option>
+    <option value="Rampura">Rampura</option>
 
-        <option value="Rampura Bridge">Rampura Bridge</option>
+    <option value="Rampura Bridge">Rampura Bridge</option>
 
-        <option value="Ray Shaheb Bazar">Ray Shaheb Bazar</option>
+    <option value="Ray Shaheb Bazar">Ray Shaheb Bazar</option>
 
-        <option value="Rampura">Rampura</option>
+    <option value="Rampura">Rampura</option>
 
-        <option value="Rampura Bridge">Rampura Bridge</option>
+    <option value="Rampura Bridge">Rampura Bridge</option>
 
-        <option value="Rayerbag">Rayerbag</option>
+    <option value="Rayerbag">Rayerbag</option>
 
-        <option value="Rupnagar">Rupnagar</option>
+    <option value="Rupnagar">Rupnagar</option>
 
-        <option value="Sadarghat">Sadarghat</option>
+    <option value="Sadarghat">Sadarghat</option>
 
-        <option value="Satrasta">Satrasta</option>
+    <option value="Satrasta">Satrasta</option>
 
-        <option value="Savar">Savar</option>
+    <option value="Savar">Savar</option>
 
-        <option value="Sayedabad">Sayedabad</option>
+    <option value="Sayedabad">Sayedabad</option>
 
-        <option value="Science Lab">Science Lab</option>
+    <option value="Science Lab">Science Lab</option>
 
-        <option value="Shahbagh">Shahbagh</option>
+    <option value="Shahbagh">Shahbagh</option>
 
-        <option value="Shahzadpur">Shahzadpur</option>
+    <option value="Shahzadpur">Shahzadpur</option>
 
-        <option value="Shantinagar">Shantinagar</option>
+    <option value="Shantinagar">Shantinagar</option>
 
-        <option value="Sheora">Sheora</option>
+    <option value="Sheora">Sheora</option>
 
-        <option value="Shewrapara">Shewrapara</option>
+    <option value="Shewrapara">Shewrapara</option>
 
-        <option value="Shia Masjid">Shia Masjid</option>
+    <option value="Shia Masjid">Shia Masjid</option>
 
-        <option value="Shishu Mela">Shishu Mela</option>
+    <option value="Shishu Mela">Shishu Mela</option>
 
-        <option value="Shonir Akhra">Shonir Akhra</option>
+    <option value="Shonir Akhra">Shonir Akhra</option>
 
-        <option value="Shyamoli">Shyamoli</option>
+    <option value="Shyamoli">Shyamoli</option>
 
-        <option value="Signal">Signal</option>
+    <option value="Signal">Signal</option>
 
-        <option value="Sony Hall">Sony Cinema Hall</option>
+    <option value="Sony Hall">Sony Cinema Hall</option>
 
-        <option value="Staff Quarter">Staff Quarter</option>
+    <option value="Staff Quarter">Staff Quarter</option>
 
-        <option value="Staff Road">Staff Road</option>
+    <option value="Staff Road">Staff Road</option>
 
-        <option value="Station Road">Station Road</option>
+    <option value="Station Road">Station Road</option>
 
-        <option value="TT Para">TT Para</option>
+    <option value="TT Para">TT Para</option>
 
-        <option value="Taltola">Taltola</option>
+    <option value="Taltola">Taltola</option>
 
-        <option value="Technical">Technical</option>
+    <option value="Technical">Technical</option>
 
-        <option value="Tongi">Tongi</option>
+    <option value="Tongi">Tongi</option>
 
-        <option value="Uttar Badda">Uttar Badda</option>
+    <option value="Uttar Badda">Uttar Badda</option>
 
-        <option value="Wireless Mor">Wireless Mor</option>
+    <option value="Wireless Mor">Wireless Mor</option>
 
-        <option value="Workshop">Workshop</option>
+    <option value="Workshop">Workshop</option>
 
-        <option value="Zirabo">Zirabo</option>
+    <option value="Zirabo">Zirabo</option>
 
-        <option value="Ziya Uddan">Ziya Uddan</option>
+    <option value="Ziya Uddan">Ziya Uddan</option>
 
-   </select>
-      </Td>
-        </Tr>
+  </select>
+
   <Tr>
-     <Td bgcolor="#ffffff" align="left">
-       <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-        <B>To</B></font>
-     </Td>
-     <Td bgcolor="#ffffff" align="right">
-<select name="destination" style="background-color: rgb(233, 245, 233);color: black;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;">
-
-  <option value="Abdullahpur">Abdullahpur</option>
-
-  <option value="Adabor">Adabor</option>
-
-  <option value="Adamjee College">Adamjee College</option>
-
-  <option value="Agargaon">Agargaon</option>
-
-  <option value="Airport">Airport</option>
-
-  <option value="Aminbazar">Aminbazar</option>
-
-  <option value="Ansar Camp">Ansar Camp</option>
-
-  <option value="Arambagh">Arambagh</option>
-
-  <option value="Asad Gate">Asad Gate</option>
-
-  <option value="Ashulia Bazar">Ashulia Bazar</option>
-
-  <option value="Azampur">Azampur</option>
-
-  <option value="Azimpur">Azimpur</option>
-
-  <option value="Babu Bazar">Babu Bazar</option>
-
-  <option value="Badda">Badda</option>
-
-  <option value="Baipayl">Baipayl</option>
-
-  <option value="Balughat">Balughat</option>
-
-  <option value="Kakoli">Banani (Kakoli)</option>
-
-  <option value="Banani">Banani</option>
-
-  <option value="Banasree">Banasree</option>
-
-  <option value="Bangla College">Bangla College</option>
-
-  <option value="Bangla Motor">Bangla motor</option>
-
-  <option value="Basabo">Basabo</option>
-
-  <option value="Bashtola">Bashtola</option>
-
-  <option value="Bashundhara">Bashundhara</option>
-
-  <option value="Bijoy Sarani">Bijoy Sarani</option>
-
-  <option value="Bosila">Bosila</option>
-
-  <option value="CMH">CMH</option>
-
-  <option value="Chairman Bari">Chairman Bari</option>
-
-  <option value="Chashara">Chashara</option>
-
-  <option value="Chiriakhana">Chiriakhana</option>
-
-  <option value="City College">City College</option>
-
-  <option value="College Gate">College Gate</option>
-
-  <option value="Darussalam">Darussalam</option>
-
-  <option value="Daynik Bangla Mor">Daynik Bangla Mor</option>
-
-  <option value="Demra">Demra</option>
-
-  <option value="Dhanmondi 27">Dhanmondi 27</option>
-
-  <option value="Dhanmondi 32">Dhanmondi 32</option>
-
-  <option value="Dhour">Dhour</option>
-
-  <option value="Diabari">Diabari</option>
-
-  <option value="Duaripara">Duaripara</option>
-
-  <option value="ECB Chottor">ECB Chottor</option>
-
-  <option value="Fantasy Kingdom">Fantasy Kingdom</option>
-
-  <option value="Farmgate">Farmgate</option>
-
-  <option value="Fulbaria">Fulbaria</option>
-
-  <option value="GPO">GPO</option>
-
-  <option value="Gabtoli">Gabtoli</option>
-
-  <option value="Garrison">Garrison</option>
-
-  <option value="Gazipur Chowrasta">Gazipur Chowrasta</option>
-
-  <option value="Golap Shah Mazar">Golap Shah Mazar</option>
-
-  <option value="Gulistan">Gulistan</option>
-
-  <option value="Gulshan 1">Gulshan 1</option>
-
-  <option value="Gulshan 2">Gulshan 2</option>
-
-  <option value="Gulshan Bridge">Gulshan Bridge</option>
-
-  <option value="Hemayetpur">Hemayetpur</option>
-
-  <option value="High Court">High Court</option>
-
-  <option value="House Building">House Building</option>
-
-  <option value="Ittefaq">Ittefaq Office</option>
-
-  <option value="Jahangir Gate">Jahangir Gate</option>
-
-  <option value="Ittefaq">Jalkuri Jalkuri</option>
-
-  <option value="Jamgora">Jamgora</option>
-
-  <option value="Jamuna Future Park">Jamuna Future Park</option>
-
-  <option value="Japan Garden City">Japan Garden City</option>
-
-  <option value="Jasimuddin">Jasimuddin</option>
-
-  <option value="Jatrabari">Jatrabari</option>
-
-  <option value="Jonopath Mor">Jonopath Mor</option>
-
-  <option value="Kakoli">Kakoli</option>
-
-  <option value="Kakrail">Kakrail</option>
-
-  <option value="Kalabagan">Kalabagan</option>
-
-  <option value="Kallyanpur">Kallyanpur</option>
-
-  <option value="Kalshi">Kalshi</option>
-
-  <option value="Kamalapur">Kamalapur</option>
-
-  <option value="Kamarpara">Kamarpara</option>
-
-  <option value="Kataban">Kataban</option>
-
-  <option value="Kawran Bazar">Kawran Bazar</option>
-
-  <option value="Kazipara">Kazipara</option>
-
-  <option value="Keraniganj">Keraniganj</option>
-
-  <option value="Khamarbari">Khamarbari</option>
-
-  <option value="Khilgaon">Khilgaon</option>
-
-  <option value="Khilkhet">Khilkhet</option>
-
-  <option value="Kodomtoli">Kodomtoli</option>
-
-  <option value="Kuril Bishwa Road">Kuril Bishwa Road</option>
-
-  <option value="Link Road">Link Road</option>
-
-  <option value="MES">MES</option>
-
-  <option value="Madhya Badda">Madhya Badda</option>
-
-  <option value="Malibagh Mor">Malibagh Mor</option>
-
-  <option value="Malibagh Railgate">Malibagh Railgate</option>
-
-  <option value="Manik Nagar">Manik Nagar</option>
-
-  <option value="Motsho Bhaban">Motsho Bhaban</option>
-
-  <option value="Matuail">Matuail</option>
-
-  <option value="Matuail">Merul</option>
-
-  <option value="Merul">Merul</option>
-
-  <option value="Mirpur 1">Mirpur 1</option>
-
-  <option value="Mirpur 10">Mirpur 10</option>
-
-  <option value="Mirpur 11">Mirpur 11</option>
-
-  <option value="Mirpur 12">Mirpur 12</option>
-
-  <option value="Mirpur 14">Mirpur 14</option>
-
-  <option value="Mirpur 2">Mirpur 2</option>
-
-  <option value="Mirpur DOHS">Mirpur DOHS</option>
-
-  <option value="Moghbazar">Moghbazar</option>
-
-  <option value="Mohakhali">Mohakhali</option>
-
-  <option value="Mohammadpur">Mohammadpur</option>
-
-  <option value="Motijheel">Motijheel</option>
-
-  <option value="Motsho Bhaban">Motsho Bhaban</option>
-
-  <option value="Mouchak">Mouchak</option>
-
-  <option value="Mugdapara">Mugdapara</option>
-
-  <option value="Nabisco">Nabisco</option>
-
-  <option value="Nadda">Nadda</option>
-
-  <option value="Nandan Park">Nandan Park</option>
-
-  <option value="Natun Bazar">Natun Bazar</option>
-
-  <option value="Naya Bazar">Naya Bazar</option>
-
-  <option value="New Market">New Market</option>
-
-  <option value="Nilkhet">Nilkhet</option>
-
-  <option value="Pallabi">Pallabi</option>
-
-  <option value="Paltan">Paltan</option>
-
-  <option value="Police Plaza">Police Plaza</option>
-
-  <option value="Press Club">Press Club</option>
-
-  <option value="Proshika Mor">Proshika Mor</option>
-
-  <option value="Purobi">Purobi</option>
-
-  <option value="Rajarbagh">Rajarbagh</option>
-
-  <option value="Rajlakshmi">Rajlakshmi</option>
-
-  <option value="Rampura">Rampura</option>
-
-  <option value="Rampura Bridge">Rampura Bridge</option>
-
-  <option value="Ray Shaheb Bazar">Ray Shaheb Bazar</option>
-
-  <option value="Rampura">Rampura</option>
-
-  <option value="Rampura Bridge">Rampura Bridge</option>
-
-  <option value="Rayerbag">Rayerbag</option>
-
-  <option value="Rupnagar">Rupnagar</option>
-
-  <option value="Sadarghat">Sadarghat</option>
-
-  <option value="Satrasta">Satrasta</option>
-
-  <option value="Savar">Savar</option>
-
-  <option value="Sayedabad">Sayedabad</option>
-
-  <option value="Science Lab">Science Lab</option>
-
-  <option value="Shahbagh">Shahbagh</option>
-
-  <option value="Shahzadpur">Shahzadpur</option>
-
-  <option value="Shantinagar">Shantinagar</option>
-
-  <option value="Sheora">Sheora</option>
-
-  <option value="Shewrapara">Shewrapara</option>
-
-  <option value="Shia Masjid">Shia Masjid</option>
-
-  <option value="Shishu Mela">Shishu Mela</option>
-
-  <option value="Shonir Akhra">Shonir Akhra</option>
-
-  <option value="Shyamoli">Shyamoli</option>
-
-  <option value="Signal">Signal</option>
-
-  <option value="Sony Hall">Sony Cinema Hall</option>
-
-  <option value="Staff Quarter">Staff Quarter</option>
-
-  <option value="Staff Road">Staff Road</option>
-
-  <option value="Station Road">Station Road</option>
-
-  <option value="TT Para">TT Para</option>
-
-  <option value="Taltola">Taltola</option>
-
-  <option value="Technical">Technical</option>
-
-  <option value="Tongi">Tongi</option>
-
-  <option value="Uttar Badda">Uttar Badda</option>
-
-  <option value="Wireless Mor">Wireless Mor</option>
-
-  <option value="Workshop">Workshop</option>
-
-  <option value="Zirabo">Zirabo</option>
-
-  <option value="Ziya Uddan">Ziya Uddan</option>
-
- </select>
-<Tr>
-     <Td bgcolor="#ffffff" align="left">
-       <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
+        <Td bgcolor="#ffffff" align="right">
         </Td>
-     <Td bgcolor="#ffffff" align="right">
-</Td>
-     </Tr>
-<Tr>
-       <Td bgcolor="#ffffff" align="right">
-       </Td>
-       <Td bgcolor="#ffffff" align="right">
-	  <INPUT style="background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 10px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;" Type="Submit" Name="Submit" Value="Find Bus" ALIGN="center" >
-       </Td>
-     </Tr>
+        <Td bgcolor="#ffffff" align="right">
+      <INPUT style="background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" Type="Submit" Name="Submit" Value="Find Bus" ALIGN="center" >
+        </Td>
+      </Tr>
+      </Td>
+    </Tr>
+  </table>
+</td>
+</table>
+  </FORM>
 
-</FORM>
      <table width="400" border="0" cellspacing="0" cellpadding="" bgcolor="#7ac476" align="center">
  <tr>
   <td>
@@ -741,28 +695,22 @@
 
     </td>
     </tr>
-       <Td bgcolor="#ffffff" align="right">
-       </Td>
-       <Td bgcolor="#ffffff" align="right">
+       <Td bgcolor="white" align="right">
 <BR>
-<div align="center">
-
 
 {% for key,value in context.items %}
 <hr>
 <center>
    <b>
      <h3>
-       <a style="text-decoration:none;border: none;color: green;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;"
+       <a class="link" style="text-decoration:none;border: none;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;"
        href="{{value}}">{{key}} . {{ value }}</a>
-
      <h3>
    </b>
-</center>
+   </center>
 {% endfor %}
-
+</Td></table></td></tr></table>
 {% endblock %}
 
-</div>
 </body>
 </HTML>
