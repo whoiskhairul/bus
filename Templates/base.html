@@ -1,32 +1,42 @@
+<body>
 {% extends 'nav.html' %}
 <hr>
+
 {% block content %}
 <br>
 <BR>
-  <table width="400" border="0" cellspacing="1" cellpadding="" bgcolor="#ffffff" align="center">
-<tr>
-<td>
-  <table width="400" border="0" cellspacing="1" cellpadding="" bgcolor="#7ac476" align="center">
-    <tr>
-    <td colspan="4" bgcolor="#ffffff" align="center">
-      <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-        <a href="dhakabusroute.herokuapp.com/map/"<button type="button" class="btn btn-outline-success">Want to See map of Dhaka?</button></a>
-    </td>
-    </tr>
 
-    <Tr>
-     </Tr>
-   </tr>
-   <h5 align =  "center"> Stopage List of   </h5>
-   <h4><font color="green"  ><center> {{ bus_name }} </center></font></h4>
-   <br>
-     {% for key,value in context.items %}
-            <ul>
-              <li><center> {{value}} </center> </li>
-            </ul>
-            <hr>
-     {% endfor %}
+  <table width="400" border="0" cellspacing="1" cellpadding="" bgcolor="#7ac476" align="center">
+  <tr>
+    <br>
+    <h5 align =  "center"> Stopage List of</h5>
+      <h4>
+        <font color="green"  ><center> {{ bus_name }} </center></font>
+      </h4>
+      <br> 
+    <hr>
+  </tr>
+  </table>
+
+  <table width="400" border="0" cellspacing="1" cellpadding="" bgcolor="#ffffff" align="center">
+    <tr>
+      <td>
+        {% for key,value in context.items %}
+          <ul>
+            <li><center> {{value}} </center> </li>
+          </ul>
+          <!-- <hr> -->
+        {% endfor %}
+      </td>
+    </tr>
+  </table>
+   
+  <table width="400" border="0" cellspacing="1" cellpadding="" bgcolor="#7ac476" align="center">
+    <td colspan="4" bgcolor="#ffffff" align="center">
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="4"></font>
+      <a href="/map/" type="button" class="btn btn-outline-success">Want to See map of Dhaka?</button></a>
+    </td>
+  </table>
 {% endblock %}
-<BR>
 </body>
 </HTML>
