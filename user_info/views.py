@@ -3,7 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
 
-from .bus import bus
+from .bus import bus,bus_stopage_list
 
 def index(request):
     return render(request,'index.html')
@@ -30,18 +30,17 @@ def user_logout(request):
     return HttpResponseRedirect('login')
 
 
-
 def show_user_info(request) :
     source = ''
     destination = ''
     context = {}
+    dict = bus_stopage_list()
     if (request.method == 'POST') :
         source = request.POST['source']
         destination = request.POST['destination']
         context = bus(source,destination)
 
-    return render(request,'bus_info.html', {'context' : context})
-
+    return render(request,'bus_info.html', {'context' : context, 'dict':dict})
 
 
 def show_bus_info(request,bus_name) :
