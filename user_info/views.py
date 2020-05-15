@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
@@ -35,10 +36,14 @@ def show_user_info(request) :
     destination = ''
     context = {}
     dict = bus_stopage_list()
+    
     if (request.method == 'POST') :
         source = request.POST['source']
         destination = request.POST['destination']
         context = bus(source,destination)
+        if not context:
+            messages.success(request, 'Opps Sorry! 😭')
+            messages.success(request, ' No Bus Found On This Route!')
 
     return render(request,'bus_info.html', {'context' : context, 'dict':dict})
 

@@ -5,9 +5,24 @@
   <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 </head>
 
+<script language="JavaScript">
+	function ValidateForm(){
+		var box = document.forms[0].source;
+		var fromNdx = box.selectedIndex;
+		box = document.forms[0].destination;
+    var toNdx = box.selectedIndex;
+    alert("selected from"+fromNdx+" to="+toNdx);
+		if(fromNdx == toNdx){
+		   alert("Current location & destination can't be same.\nPlease select different location.");
+		   return false;
+		}
+		return true;
+	}
+	</script>
+
 <BODY>
 {% block content %}
-  <FORM name="myform" action="" method="post">
+  <FORM name="myform" action="" method="post" onSubmit="return ValidateForm();">
   {% csrf_token %}
   <BR>
   <BR>
@@ -87,7 +102,15 @@
     </tr>
        <Td bgcolor="white" align="right">
 <BR>
-
+{% if messages %}
+<center class="messages">
+  {% for message in messages %}
+    <font size=04 color=red ><b>{{ message }}</b></font>
+    <br>
+  {% endfor %}
+</center>
+<br>
+{% endif %}
 {% for key,value in context.items %}
 <hr>
 <center>
