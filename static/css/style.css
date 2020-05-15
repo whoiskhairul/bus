@@ -1,6 +1,7 @@
 .link { 
-    color: green;; } /* CSS link color (green) */
-    .link:hover { color:red; 
+    color: green;; } /* CSS link color (red) */
+
+.link:hover { color:red; 
 }
 .nav-link dropdown-toggle{
     color: #FF0000;
