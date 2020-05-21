@@ -30,6 +30,7 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect('login')
 
+from django import forms
 
 def show_user_info(request) :
     source = ''
@@ -40,9 +41,11 @@ def show_user_info(request) :
     if (request.method == 'POST') :
         source = request.POST['source']
         destination = request.POST['destination']
+        if source == destination:
+            raise forms.ValidationError("Start and End location can't be same")
         context = bus(source,destination)
         if not context:
-            messages.success(request, 'Opps Sorry! 😭')
+            messages.error(request, 'Opps Sorry! 😭')
             messages.success(request, ' No Bus Found On This Route!')
 
     return render(request,'bus_info.html', {'context' : context, 'dict':dict})
