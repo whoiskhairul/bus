@@ -5,126 +5,135 @@
   <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 </head>
 
-<script language="JavaScript">
-	function ValidateForm(){
-		var box = document.forms[0].source;
-		var fromNdx = box.selectedIndex;
-		box = document.forms[0].destination;
-    var toNdx = box.selectedIndex;
-    alert("selected from"+fromNdx+" to="+toNdx);
-		if(fromNdx == toNdx){
-		   alert("Current location & destination can't be same.\nPlease select different location.");
-		   return false;
-		}
-		return true;
-	}
-	</script>
-
-<BODY>
 {% block content %}
-  <FORM name="myform" action="" method="post" onSubmit="return ValidateForm();">
-  {% csrf_token %}
-  <BR>
-  <BR>
-  <table width="400" border="0" cellspacing="0" cellpadding="1" bgcolor="#7ac476" align="center">
- 
-  <td>
-  <table width="100%" border="0" colspan="4" cellspacing="0" cellpadding="9" bgcolor="#7ac476">
-      <tr>
-       <td colspan="4" bgcolor="#7ac476" align="center"> 
-        <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-          <b><h2 style="padding-top: 15px;">Dhaka City Bus Route</h2></b>
-        </font>
-      </td>
-      </tr>
 
-      <Tr>
-        <Td bgcolor="#ffffff" align="left">
-          <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-          <B>From</B></font>
-        </Td>
-        <Td bgcolor="#ffffff" align="right">
-    <select name="source" style="background-color: rgb(233, 245, 233);color: black;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;">
 
-      {% for key,value in dict.items %}
-      <option value="{{ value }}">{{ value }}</option>
-      {% endfor %}
+<FORM method="POST"><br><br>
+{% csrf_token %}
 
-    </select>
-        </Td>
-          </Tr>
-    <Tr>
-      <Td bgcolor="#ffffff" align="left">
-        <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
-          <B>To</B></font>
-      </Td>
-      <Td bgcolor="#ffffff" align="right">
-  <select name="destination" style="background-color: rgb(233, 245, 233);color: black;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;">
+  <table width="400" cellpadding="1" bgcolor="#7ac476" align="center">
 
-    
-    {% for key,value in dict.items %}
-    <option value="{{ value }}">{{ value }}</option>
+    <td>
       
-    {% endfor %}
-  </select>
+      <table width="100%" cellpadding="12" bgcolor="#7ac476">
+        
+        <tr>
 
-  <Tr>
-        <Td bgcolor="#ffffff" align="right">
-        </Td>
-        <Td bgcolor="#ffffff" align="right">
-      <INPUT style="background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 10px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;" Type="Submit" Name="Submit" Value="Find Bus" ALIGN="center" >
-        </Td>
-      </Tr>
-      </Td>
-    </Tr>
+          <td colspan="4" bgcolor="#7ac476" align="center"> 
+            <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
+              <b><h2 style="padding-top: 15px;">Dhaka City Bus Route</h2></b>
+            </font>
+          </td>
+
+        </tr>
+
+        <Tr>
+
+          <Td bgcolor="#ffffff" align="left">
+            <font face="Verdana" size="4">
+              <B>From</B>
+            </font>
+          </Td>
+          
+          <Td bgcolor="#ffffff" align="right">
+            
+            <input list="stoppage" name="source" placeholder="Your Location" >
+            <datalist id="stoppage">
+              {% for key,value in dict.items %}
+              <option value="{{ value }}">{{ value }}</option>
+              {% endfor %}
+            </datalist>
+
+            <!-- <select name="source" style=" background-color: rgb(233, 245, 233); padding: 5px 10px;">
+              {% for key,value in dict.items %}
+              <option value="{{ value }}">{{ value }}</option>
+              {% endfor %}
+            </select> -->
+
+          </Td>
+
+        </Tr>
+
+        <Tr>
+
+          <Td bgcolor="#ffffff" align="left">
+            <font face="Verdana" size="4">
+              <B>To</B>
+            </font>
+          </Td>
+
+          <Td bgcolor="#ffffff" align="right">
+            
+            <input list="stoppage" name="destination" placeholder="Your Destination">
+            <datalist id="stoppage">
+              {% for key,value in dict.items %}
+              <option value="{{ value }}">{{ value }}</option>
+              {% endfor %}
+            </datalist>
+            
+            <!-- <select name="destination" style=" background-color:rgb(233,245,233); padding:5px 10px; ">
+            {% for key,value in dict.items %}
+              <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+            </select> -->
+
+        </Tr>
+        
+        <Tr>
+          <Td bgcolor="#ffffff" align="right"></Td>
+          <Td bgcolor="#ffffff" align="right">
+            <INPUT style="background-color: #4CAF50;border: none;color: white;padding: 10px 25px;font-size: 17px;"
+            Type="Submit" Name="Submit" Value="Find Bus" >
+          </Td>
+        </Tr>
+      </table>
+    </Td> 
   </table>
-</td>
-</table>
-  </FORM>
+</FORM>
 
-     <table width="400" border="0" cellspacing="0" cellpadding="" bgcolor="#7ac476" align="center">
- <tr>
-  <td>
 
-   <table width="100%" border="0" cellspacing="0" cellpadding="" bgcolor="#7ac476">
-    <tr>
-    <td colspan="4" bgcolor="#7ac476" align="center">
-      <font face="Verdana, Arial, Helvetica, sans-serif" size="4">
+<table width="400" bgcolor="#7ac476" border="0" align="center" style="border-color: #4CAF50;" >
+  <tr>
+    <td>
+      <table width="100%" bgcolor="#7ac476" style="padding:100%">
+        <tr>
+          <td colspan="4" bgcolor="#7ac476" align="center">
+            <font face="Verdana" size="4">
+          </td>
+        </tr>
 
+        <Td bgcolor="white" align="right">
+          
+          {% if messages %}
+          <br>
+          <center class="messages">
+            {% for message in messages %}
+            <font size=04 color=red ><b>{{ message }}</b></font>
+            <br>
+            {% endfor %}
+          </center>
+          <br>
+          {% endif %}
+          
+          {% for key,value in context.items %}
+          <hr>
+          <center>
+          <b>
+            <h3>
+              <a class="link" style="padding: 15px 32px;display: inline-block;font-size: 16px; text-decoration:none ;"
+              href="{{value}}">{{key}} . {{ value }}</a>
+            </h3>
+          </b>
+          </center>
+          {% endfor %}
+
+        </Td>
+      </table>
     </td>
-    </tr>
-       <Td bgcolor="white" align="right">
-<BR>
-{% if messages %}
-<center class="messages">
-  {% for message in messages %}
-    <font size=04 color=red ><b>{{ message }}</b></font>
-    <br>
-  {% endfor %}
-</center>
-<br>
-{% endif %}
-{% for key,value in context.items %}
-<hr>
-<center>
-   <b>
-     <h3>
-       <a class="link" style="text-decoration:none;border: none;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;"
-       href="{{value}}">{{key}} . {{ value }}</a>
-     <h3>
-   </b>
-   </center>
-{% endfor %}
-</Td></table></td></tr></table>
-<br><br><br><br><br><br><br><br>
+  </tr>
+</table>
+
+<section style="padding: 100px;"></section>
 {% endblock %}
 
-</body>
 </HTML>

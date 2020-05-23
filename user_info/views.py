@@ -45,7 +45,7 @@ def show_user_info(request) :
         #     raise forms.ValidationError("Start and End location can't be same")
         context = bus(source,destination)
         if not context:
-            messages.error(request, 'Opps Sorry! 😭')
+            messages.error(request, 'Opps Sorry!')
             messages.error(request, ' No Bus Found On This Route!')
 
     return render(request,'bus_info.html', {'context' : context, 'dict':dict})
