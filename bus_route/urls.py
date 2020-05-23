@@ -5,8 +5,8 @@ urlpatterns = [
     path('khairul/', admin.site.urls),
     path('signup/',views.user_signup,name='signup'),
     path('login/',views.user_login,name='login'),
-    path('bus/',include('user_info.urls'),name='user'),
-    path('map/',include('map.urls'),name='map'),
+    path('bus/',include('user_info.urls'),name='bus'),
+    path('map/',include('map.urls')),
     path('',views.index, name = 'index')
 
 ]

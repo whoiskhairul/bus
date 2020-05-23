@@ -43,7 +43,8 @@ def show_user_info(request) :
         destination = request.POST['destination']
         # if source == destination:
         #     raise forms.ValidationError("Start and End location can't be same")
-        context = bus(source,destination)
+        if source and destination:
+            context = bus(source,destination)
         if not context:
             messages.error(request, 'Opps Sorry!')
             messages.error(request, ' No Bus Found On This Route!')
