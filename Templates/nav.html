@@ -1,18 +1,20 @@
 <!doctype html>
 {% load static %}
-<HTML>
-<HEAD>
-  <title> Dhaka Bus Route  </title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Dhaka Bus Route,Find bus on your desired route. </title>
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="description" content="This website can be used for finding bus/route of Dhaka city.">
   <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-
   <link rel = "icon" href = "https://image.flaticon.com/icons/png/512/2636/2636346.png" type = "image/x-icon"> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</HEAD>
+  <link rel="canonical" href="https://dhakabusroute.herokuapp.com/" />
+  <link rel="alternate" hreflang="en" href="https://www.example.com" />
+</head>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{% url 'index' %}"> <font color = "green">Dhaka <font color="red">Bus</font> Route</font> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
